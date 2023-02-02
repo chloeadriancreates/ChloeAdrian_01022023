@@ -2,6 +2,7 @@ import "./App.scss";
 import Hero from "../Hero/Hero";
 import Header from "../Header/Header";
 import LodgingList from "../LodgingList/LodgingList";
+import Footer from "../Footer/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <Header />
       <Hero />
       <LodgingList lodgings={lodgings} />
+      <Footer />
     </div>
   );
 }

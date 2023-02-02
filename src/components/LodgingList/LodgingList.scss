@@ -7,9 +7,15 @@
     background-color: colors.$secondary;
     border-radius: 25px;
     padding: 50px 50px 0px;
+    margin: 0px 100px;
 
     @include mixins.tablet {
         padding: 0;
         background: none;
+        margin: 0px 50px;
+    }
+
+    @include mixins.mobile {
+        margin: 0px 20px;
     }
 }

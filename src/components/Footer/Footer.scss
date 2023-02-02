@@ -1,0 +1,32 @@
+@use '../../utils/mixins';
+
+.footer {
+    @include mixins.flex(column, center, center);
+    background: black;
+    padding: 66px 100px 30px;
+    margin-top: 45px;
+
+    @include mixins.tablet {
+        padding: 66px 50px 30px;
+        margin-top: 30px;
+    }
+
+    @include mixins.mobile {
+        padding: 66px 20px 30px;
+        margin-top: 20px;
+    }
+
+    &-credits {
+        color: white;
+        font-size: 24px;
+        margin-top: 30px;
+
+        @include mixins.tablet {
+            font-size: 21px;
+        }
+
+        @include mixins.mobile {
+            font-size: 12px;
+        }
+    }
+}

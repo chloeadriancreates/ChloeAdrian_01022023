@@ -3,10 +3,14 @@
 
 .header {
     @include mixins.flex(row, space-between, center);
-    margin: 40px 0px 43px;
+    margin: 40px 100px 43px;
+
+    @include mixins.tablet {
+        margin: 40px 50px 43px;
+    }
 
     @include mixins.mobile {
-        margin: 20px 0px 16px;
+        margin: 20px 20px 16px;
     }
 
     &-logo {
