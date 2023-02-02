@@ -1,0 +1,15 @@
+@use '../../utils/mixins';
+@use '../../utils/colors';
+
+.lodgingList {
+    @include mixins.flex(row, center, center);
+    flex-wrap: wrap;
+    background-color: colors.$secondary;
+    border-radius: 25px;
+    padding: 50px 50px 0px;
+
+    @include mixins.tablet {
+        padding: 0;
+        background: none;
+    }
+}

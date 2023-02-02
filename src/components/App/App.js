@@ -1,10 +1,11 @@
 import "./App.scss";
 import Hero from "../Hero/Hero";
 import Header from "../Header/Header";
+import LodgingList from "../LodgingList/LodgingList";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [lodgings, setLodgings] = useState();
+  const [lodgings, setLodgings] = useState([{}]);
 
   const getLodgings = async() => {
     try {
@@ -27,6 +28,7 @@ function App() {
     <div className="app">
       <Header />
       <Hero />
+      <LodgingList lodgings={lodgings} />
     </div>
   );
 }
