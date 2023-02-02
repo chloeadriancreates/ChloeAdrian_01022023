@@ -1,0 +1,26 @@
+/* Media queries */
+@mixin laptop {
+    @media screen and (max-width: 1000px){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 700px){
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 500px){
+        @content;
+    }
+}
+
+/* Styling */
+@mixin flex($flex-direction: row, $justify-content: center, $align-items: center) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}

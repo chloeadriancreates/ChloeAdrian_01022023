@@ -1,0 +1,51 @@
+@use '../../utils/mixins';
+@use '../../utils/colors';
+
+.header {
+    @include mixins.flex(row, space-between, center);
+    margin: 40px 0px 43px;
+
+    @include mixins.mobile {
+        margin: 20px 0px 16px;
+    }
+
+    &-logo {
+        @include mixins.tablet {
+            height: 55px;
+        }
+
+        @include mixins.mobile {
+            height: 47px;
+        }
+    }
+
+    &-nav {
+        @include mixins.flex();
+
+        &-link {
+            font-size: 24px;
+            color: colors.$primary;
+
+            @include mixins.tablet {
+                font-size: 18px;
+            }
+
+            @include mixins.mobile {
+                font-size: 12px;
+                text-transform: uppercase;
+            }
+
+            &:not(:last-child) {
+                margin-right: 57px;
+
+                @include mixins.tablet {
+                    margin-right: 23px;
+                }
+
+                @include mixins.mobile {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

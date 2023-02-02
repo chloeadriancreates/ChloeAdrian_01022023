@@ -1,0 +1,47 @@
+@use '../../utils/mixins';
+
+.hero {
+    @include mixins.flex();
+    flex-wrap: wrap;
+    height: 223px;
+    border-radius: 25px;
+    margin: 45px 0px;
+    background-image: url('../../assets/hero.jpg');
+    background-color: hsla(100, 100%, 0%, 0.3);
+    background-blend-mode: darken;
+    background-size: cover;
+    background-position: center;
+    padding: 32px;
+
+    @include mixins.tablet {
+        // @include mixins.flex(column, center, start);
+        height: 175px;
+        border-radius: 17px;
+        padding: 24px;
+    }
+
+    @include mixins.mobile {
+        height: 111px;
+        border-radius: 10px;
+        padding: 16px;
+    }
+
+    &-title {
+        color: hsla(0, 0%, 100%, 1);
+        font-size: 48px;
+        line-height: 100%;
+
+        @include mixins.laptop {
+            width: 100%;
+            text-align: left;
+        }
+
+        @include mixins.tablet {
+            font-size: 36px;
+        }
+
+        @include mixins.mobile {
+            font-size: 24px;
+        }
+    }
+}

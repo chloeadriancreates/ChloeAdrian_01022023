@@ -17,13 +17,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style expanded"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": ["react-app"],
+    "rules": {
+      "semi": ["warn", "always"],
+      "comma-dangle": ["warn", "never"],
+      "comma-spacing": ["warn", {"before": false, "after": true}],
+      "no-multi-spaces": "warn",
+      "no-trailing-spaces": "warn",
+      "no-multiple-empty-lines": ["warn", {"max": 2}],
+      "quotes": ["warn", "double", {"avoidEscape": true, "allowTemplateLiterals": true}]
+    }
   },
   "browserslist": {
     "production": [
