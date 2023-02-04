@@ -13,7 +13,7 @@ function Collapse(props) {
     return (
         <div className={`collapse collapse--${size}`}>
             <div className="collapse-main">
-                <h3 className="collapse-main-title">{title}</h3>
+                <p className="collapse-main-title">{title}</p>
                 <button className={ open ? "collapse-main-button collapse-main-button--open" : "collapse-main-button" } onClick={toggleCollapse}>
                     <img src={icon} alt="" />
                 </button>

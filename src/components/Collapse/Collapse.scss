@@ -8,9 +8,21 @@
 
     &--large {
         font-size: 24px;
+
+        @include mixins.tablet {
+            font-size: 18px;
+        }
+
+        @include mixins.mobile {
+            font-size: 13px;
+        }
         
         &:not(:last-child) {
             margin-bottom: 30px;
+
+            @include mixins.mobile {
+                margin-bottom: 20px;
+            }
         }
     }
 
@@ -20,8 +32,11 @@
         padding: 10px 18px;
         border-radius: 5px;
 
+        @include mixins.mobile {
+            padding: 6 11px;;
+        }
+
         &-title {
-            font-weight: normal;
             color: white;
         }
 
@@ -38,6 +53,12 @@
             &--open {
                 transform: rotate(-180deg);
             }
+
+            @include mixins.mobile {
+                img {
+                    width: 15px;
+                }
+            }
         }
     }
 
@@ -50,5 +71,9 @@
         top: -5px;
         z-index: -1;
         transition: all 0.5s;
+
+        @include mixins.mobile {
+            font-size: 20px 11px;
+        }
     }
 }
