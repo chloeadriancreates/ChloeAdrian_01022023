@@ -3,10 +3,10 @@
 
 .header {
     @include mixins.flex(row, space-between, center);
-    margin: 40px 100px 43px;
+    margin: 40px 100px;
 
     @include mixins.tablet {
-        margin: 40px 50px 43px;
+        margin: 40px 50px;
     }
 
     @include mixins.mobile {
@@ -29,11 +29,8 @@
         &-link {
             font-size: 24px;
             color: colors.$primary;
-            text-decoration: underline;
-
-            &--active {
-                text-decoration: none;
-            }
+            padding: 10px;
+            transition: all 0.3s;
 
             @include mixins.tablet {
                 font-size: 18px;
@@ -41,14 +38,34 @@
 
             @include mixins.mobile {
                 font-size: 12px;
+                padding: 0px;
                 text-transform: uppercase;
             }
 
+            &--inactive {
+                text-decoration: none;
+
+                &:hover {
+                    color: white; 
+                    background-color: colors.$primary;
+                    border-radius: 5px;
+
+                    @include mixins.mobile {
+                        color: colors.$primary; 
+                        background-color: white;
+                    }
+                }
+            }
+
+            &--active {
+                text-decoration: underline;
+            }
+
             &:not(:last-child) {
-                margin-right: 57px;
+                margin-right: 37px;
 
                 @include mixins.tablet {
-                    margin-right: 23px;
+                    margin-right: 3px;
                 }
 
                 @include mixins.mobile {

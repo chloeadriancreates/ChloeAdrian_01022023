@@ -9,14 +9,14 @@ function Header() {
             <nav className="header-nav">
                 <NavLink to="/"
                     className={({ isActive }) =>
-                        isActive ? "header-nav-link header-nav-link--active" : "header-nav-link"
+                        isActive ? "header-nav-link header-nav-link--active" : "header-nav-link header-nav-link--inactive"
                     }
                 >
                     Accueil
                 </NavLink>
                 <NavLink to="/about"
                     className={({ isActive }) =>
-                        isActive ? "header-nav-link header-nav-link--active" : "header-nav-link"
+                        isActive ? "header-nav-link header-nav-link--active" : "header-nav-link header-nav-link--inactive"
                     }
                 >
                     À propos
