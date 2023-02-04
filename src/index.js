@@ -5,11 +5,13 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
+import Error from "./pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <Home />,
+    errorElement: <Error />
   },
   {
     path: "/about",

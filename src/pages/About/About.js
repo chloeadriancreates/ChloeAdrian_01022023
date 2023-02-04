@@ -26,7 +26,7 @@ function About() {
             <Header />
             <Hero />
             <div className="collapseList">
-                { values.map( value => <Collapse key={value.id} title={value.title} content={value.content} size="large" />)}
+                { values.map( value => <Collapse key={value.id} title={value.title} content={value.content} size="large" />) }
             </div>
             <Footer />
         </div>

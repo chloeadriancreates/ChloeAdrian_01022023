@@ -1,0 +1,26 @@
+@use '../../utils/mixins';
+@use '../../utils/colors';
+
+.error {
+    @include mixins.flex(column, center, center);
+    color: colors.$primary;
+
+    &-title {
+        font-weight: 700;
+        font-size: 288px;
+        margin-top: 12vh;
+    }
+
+    &-message {
+        font-size: 36px;
+        margin-top: 6.4vh;
+    }
+
+    &-link {
+        font-size: 18px;
+        color: colors.$primary;
+        margin-top: 17.6vh;
+    }
+}
+
+    
