@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 function Error() {
     return (
-        <div>
+        <div className="error">
             <Header />
-            <div className="error">
-                <h1 className="error-title">404</h1>
-                <p className="error-message">Oups! La page que vous demandez n'existe pas.</p>
-                <Link className="error-link" to="/">Retourner sur la page d’accueil</Link>
+            <div className="error-message">
+                <h1 className="error-message-title">404</h1>
+                <p className="error-message-content">Oups! La page que vous demandez n'existe pas.</p>
             </div>
+            <Link className="error-link" to="/">Retourner sur la page d’accueil</Link>
         </div>
     );
 }

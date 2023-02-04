@@ -2,24 +2,53 @@
 @use '../../utils/colors';
 
 .error {
-    @include mixins.flex(column, center, center);
-    color: colors.$primary;
-
-    &-title {
-        font-weight: 700;
-        font-size: 288px;
-        margin-top: 12vh;
-    }
+    @include mixins.flex(column, space-between, space-between);
+    height: 100vh;
 
     &-message {
-        font-size: 36px;
-        margin-top: 6.4vh;
+        @include mixins.flex(column, center, center);
+        color: colors.$primary;
+        margin: 0px 58px;
+        height: 100%;
+        text-align: center;
+
+        &-title {
+            font-weight: 700;
+            font-size: 288px;
+
+            @include mixins.tablet {
+                font-size: 150px;
+            }
+
+            @include mixins.mobile {
+                font-size: 96px;
+            }
+        }
+
+        &-content {
+            font-size: 36px;
+            margin-top: 1vh;
+
+            @include mixins.tablet {
+                font-size: 27px;
+            }
+
+            @include mixins.mobile {
+                font-size: 18px;
+            }
+        } 
     }
 
     &-link {
         font-size: 18px;
         color: colors.$primary;
-        margin-top: 17.6vh;
+        margin-bottom: 15vh;
+        text-align: center;
+
+        @include mixins.mobile {
+            font-size: 14px;
+            margin-bottom: 29vh ;
+        }
     }
 }
 
