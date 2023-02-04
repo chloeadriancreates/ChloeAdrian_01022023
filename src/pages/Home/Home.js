@@ -1,8 +1,8 @@
-import "./App.scss";
-import Hero from "../Hero/Hero";
-import Header from "../Header/Header";
-import LodgingList from "../LodgingList/LodgingList";
-import Footer from "../Footer/Footer";
+import "./Home.scss";
+import Hero from "../../components/Hero/Hero";
+import Header from "../../components/Header/Header";
+import LodgingList from "../../components/LodgingList/LodgingList";
+import Footer from "../../components/Footer/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -20,10 +20,6 @@ function App() {
   useEffect(() => {
     getLodgings();
   }, []);
-
-  useEffect(() => {
-    console.log(lodgings);
-  }, [lodgings]);
 
   return (
     <div className="app">
