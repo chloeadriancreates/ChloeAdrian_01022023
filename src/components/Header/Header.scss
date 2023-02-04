@@ -29,6 +29,11 @@
         &-link {
             font-size: 24px;
             color: colors.$primary;
+            text-decoration: underline;
+
+            &--active {
+                text-decoration: none;
+            }
 
             @include mixins.tablet {
                 font-size: 18px;
