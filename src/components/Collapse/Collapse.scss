@@ -1,0 +1,54 @@
+@use '../../utils/mixins';
+@use '../../utils/colors';
+
+.collapse {
+    &--small {
+        font-size: 18px;
+    }
+
+    &--large {
+        font-size: 24px;
+        
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &-main {
+        @include mixins.flex(row, space-between, center);
+        background-color: colors.$primary;
+        padding: 10px 18px;
+        border-radius: 5px;
+
+        &-title {
+            font-weight: normal;
+            color: white;
+        }
+
+        &-button {
+            @include mixins.flex();
+            background: none;
+            transition: all 0.4s;
+
+            &:hover {
+                transform: rotate(-90deg);
+                cursor: pointer;
+            }
+
+            &--open {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &-content {
+        color: colors.$primary;
+        background-color: colors.$secondary;
+        padding: 30px 18px;
+        border-radius: 5px;
+        position: relative;
+        top: -5px;
+        z-index: -1;
+        transition: all 0.5s;
+    }
+}
