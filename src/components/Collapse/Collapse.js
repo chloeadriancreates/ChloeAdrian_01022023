@@ -1,5 +1,5 @@
 import "./Collapse.scss";
-import icon from "../../assets/collapseIcon.svg";
+import arrow from "../../assets/arrow.svg";
 import { useState } from "react";
 
 function Collapse(props) {
@@ -23,7 +23,7 @@ function Collapse(props) {
             <div className="collapse-main">
                 <p className="collapse-main-title">{title}</p>
                 <button className={ open ? "collapse-main-button collapse-main-button--open" : "collapse-main-button" } onClick={toggleCollapse}>
-                    <img src={icon} alt="" />
+                    <img src={arrow} alt="" />
                 </button>
             </div>
             { open && <div className="collapse-content">

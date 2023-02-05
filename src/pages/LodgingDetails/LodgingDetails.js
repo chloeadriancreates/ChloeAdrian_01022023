@@ -1,6 +1,7 @@
 import "./LodgingDetails.scss";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import Carousel from "../../components/Carousel/Carousel";
 import Tag from "../../components/Tag/Tag";
 import Rating from "../../components/Rating/Rating";
 import Collapse from "../../components/Collapse/Collapse";
@@ -8,11 +9,12 @@ import Footer from "../../components/Footer/Footer";
 
 function LodgingDetails() {
     const loc = useLocation();
-    const { title, location, tags, host, rating, description, equipments } = loc.state.data;
+    const { pictures, title, location, tags, host, rating, description, equipments } = loc.state.data;
 
     return (
         <div>
             <Header />
+            <Carousel pictures={pictures} />
             <div className="description">
                 <header className="description-header">
                     <div className="description-header-title">
@@ -29,7 +31,6 @@ function LodgingDetails() {
                         {tags.map((tag, index) => <Tag key={index} tag={tag} className="description-filters-taglist-tag" />)}
                     </div>
                     <Rating rating={rating} />
-                    {/* <div className="description-filters-rating">{rating}</div> */}
                 </div>
                 <div className="description-details">
                     <div className="description-details-column">
