@@ -34,7 +34,7 @@ function LodgingDetails() {
                         <Collapse title="Description" content={description} size="small" />
                     </div>
                     <div className="description-details-column">
-                        <Collapse title="Équipements" content={equipments.map(equipment => { return `${equipment}\n`; })} size="small" />
+                        <Collapse title="Équipements" content={equipments} size="small" />
                     </div>
                 </div>
             </div>

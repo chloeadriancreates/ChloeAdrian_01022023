@@ -66,8 +66,11 @@
     }
 
     &-content {
+        @include mixins.flex(column, center, flex-start);
         color: colors.$primary;
         background-color: colors.$secondary;
+        font-weight: 400;
+        line-height: 145%;
         padding: 30px 18px;
         border-radius: 5px;
         position: relative;

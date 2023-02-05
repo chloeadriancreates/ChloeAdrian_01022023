@@ -8,6 +8,16 @@ function Collapse(props) {
 
     const toggleCollapse = () => {
         setOpen(!open);
+        console.log(content);
+        console.log(typeof(content));
+    };
+
+    const streamlineContent = (content) => {
+        if(typeof(content) !== "object") {
+            return [content];
+        } else {
+            return content;
+        }
     };
 
     return (
@@ -18,9 +28,9 @@ function Collapse(props) {
                     <img src={icon} alt="" />
                 </button>
             </div>
-            {
-                open && <p className="collapse-content">{content}</p>
-            }
+            { open && <div className="collapse-content">
+                { streamlineContent(content).map((item, index) => <p key={index} className="collapse-content-text">{item}</p>) }
+            </div> }
         </div>
     );
 }
