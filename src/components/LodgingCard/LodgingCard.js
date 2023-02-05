@@ -1,12 +1,13 @@
 import "./LodgingCard.scss";
+import { Link } from "react-router-dom";
 
 function LodgingCard(props) {
-    const { title, cover } = props.data;
+    const { id, title, cover } = props.data;
 
     return (
-        <div className="lodging" style={ {backgroundImage: `url(${cover})`} }>
+        <Link to={`/lodging/${id}`} state={{ data: props.data }} className="lodging" style={ {backgroundImage: `url(${cover})`} }>
             <h3 className="lodging-title">{title}</h3>
-        </div>
+        </Link>
     );
 }
 

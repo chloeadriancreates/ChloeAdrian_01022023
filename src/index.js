@@ -6,6 +6,7 @@ import "./index.scss";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Error from "./pages/Error/Error";
+import LodgingDetails from "./pages/LodgingDetails/LodgingDetails";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />
+  },
+  {
+    path: "/lodging/:lodgingId",
+    element: <LodgingDetails />
   }
 ]);
 

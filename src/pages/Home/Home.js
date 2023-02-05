@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Hero />
+      <Hero home={true} />
       <LodgingList lodgings={lodgings} />
       <Footer />
     </div>

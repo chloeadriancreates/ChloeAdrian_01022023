@@ -1,0 +1,59 @@
+@use '../../utils/colors';
+@use '../../utils/mixins';
+
+.description {
+    margin: 25px 100px;
+
+    &-header {
+        @include mixins.flex(row, space-between, flex-start);
+        color: colors.$primary;
+
+        &-title {
+            &-main {
+                font-size: 36px;
+                line-height: 50px;
+                font-weight: normal;
+            }
+
+            &-location {
+                font-size: 18px;
+            }
+        }
+
+        &-host {
+            @include mixins.flex(row, flex-end, center);
+            
+            &-name {
+                font-size: 18px;
+                margin-right: 10px;
+                text-align: right;
+            }
+            &-picture {
+                width: 64px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &-filters {
+        @include mixins.flex(row, space-between, center);
+        margin: 25px 0px;
+
+        &-taglist {
+            @include mixins.flex(row, flex-start, center);
+        }
+    }
+
+    &-details {
+        @include mixins.flex(row, center, flex-start);
+
+        &-column {
+            width: 50%;
+
+            &:not(:last-child) {
+                margin-right: 76px;
+            }
+        }
+    }
+}

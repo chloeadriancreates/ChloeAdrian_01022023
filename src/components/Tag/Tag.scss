@@ -1,0 +1,14 @@
+@use '../../utils/colors';
+
+.tag {
+    color: white;
+    background-color: colors.$primary;
+    padding: 5px 30px;
+    font-size: 14px;
+    border-radius: 10px;
+    text-align: center;
+
+    &:not(:last-child) {
+        margin-right: 10px;
+    }
+}
