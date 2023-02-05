@@ -8,8 +8,6 @@ function Collapse(props) {
 
     const toggleCollapse = () => {
         setOpen(!open);
-        console.log(content);
-        console.log(typeof(content));
     };
 
     const streamlineContent = (content) => {
