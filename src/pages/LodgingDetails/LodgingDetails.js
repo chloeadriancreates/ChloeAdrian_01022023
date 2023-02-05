@@ -2,6 +2,7 @@ import "./LodgingDetails.scss";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Tag from "../../components/Tag/Tag";
+import Rating from "../../components/Rating/Rating";
 import Collapse from "../../components/Collapse/Collapse";
 import Footer from "../../components/Footer/Footer";
 
@@ -27,7 +28,8 @@ function LodgingDetails() {
                     <div className="description-filters-taglist">
                         {tags.map((tag, index) => <Tag key={index} tag={tag} className="description-filters-taglist-tag" />)}
                     </div>
-                    <div className="description-filters-rating">{rating}</div>
+                    <Rating rating={rating} />
+                    {/* <div className="description-filters-rating">{rating}</div> */}
                 </div>
                 <div className="description-details">
                     <div className="description-details-column">

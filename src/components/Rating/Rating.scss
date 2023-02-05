@@ -1,0 +1,23 @@
+@use '../../utils/mixins';
+@use '../../utils/colors';
+
+.rating {
+    @include mixins.flex;
+    
+    &-star {
+        width: 30px;
+        height: 30px;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        &--filled {
+            fill: colors.$primary;
+        }
+    
+        &--empty {
+            fill: colors.$placeholder;
+        }
+    }
+}
