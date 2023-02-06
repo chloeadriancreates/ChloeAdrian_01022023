@@ -64,6 +64,10 @@
             &:not(:last-child) {
                 margin-right: 37px;
 
+                @include mixins.laptop {
+                    margin-right: 15px;
+                }
+
                 @include mixins.tablet {
                     margin-right: 3px;
                 }
