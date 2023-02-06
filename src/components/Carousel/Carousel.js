@@ -26,8 +26,12 @@ function Carousel(props) {
         <div className="carousel">
             { pictures.length > 1 &&
                 <div className="carousel-arrows">
-                    <img className="carousel-arrows-arrow carousel-arrows-arrow-previous" onClick={previousImage} src={arrow} alt="Précédent" />
-                    <img className="carousel-arrows-arrow carousel-arrows-arrow-next" onClick={nextImage} src={arrow} alt="Suivant" />
+                    <button className="carousel-arrows-arrow carousel-arrows-arrow-previous" onClick={previousImage}>
+                        <img src={arrow} alt="Précédent" />
+                    </button>
+                    <button className="carousel-arrows-arrow carousel-arrows-arrow-next" onClick={nextImage}>
+                        <img src={arrow} alt="Suivant" />
+                    </button>
                 </div>
             }
             <p className="carousel-counter">{index + 1}/{pictures.length}</p>

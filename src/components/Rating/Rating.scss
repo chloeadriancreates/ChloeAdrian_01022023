@@ -3,13 +3,27 @@
 
 .rating {
     @include mixins.flex;
+    margin-bottom: 10px;
+
+    @include mixins.tablet {
+        margin-bottom: 0px;
+    }
     
     &-star {
         width: 30px;
         height: 30px;
 
+        @include mixins.mobile {
+            width: 15px;
+            height: 15px;
+        }
+
         &:not(:last-child) {
             margin-right: 10px;
+
+            @include mixins.mobile {
+                margin-right: 5px;
+            }
         }
 
         &--filled {

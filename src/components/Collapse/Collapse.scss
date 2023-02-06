@@ -6,6 +6,10 @@
 
     &--small {
         font-size: 18px;
+
+        @include mixins.mobile {
+            font-size: 12px;
+        }
     }
 
     &--large {

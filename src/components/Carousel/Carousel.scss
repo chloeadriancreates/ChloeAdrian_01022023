@@ -5,12 +5,30 @@
     margin: 0px 100px;
     height: 415px;
 
+    @include mixins.tablet {
+        margin: 0px 50px;
+        height: 300px;
+    }
+
+    @include mixins.mobile {
+        margin: 0px 20px;
+        height: 255px;
+    }
+
     &-image {
         width: 100%;
         height: 415px;
         border-radius: 25px;
         object-fit: cover;
         object-position: center;
+
+        @include mixins.tablet {
+            height: 300px;
+        }
+
+        @include mixins.mobile {
+            height: 255px;
+        }
     }
 
     &-arrows {
@@ -21,14 +39,34 @@
         padding: 25px;
 
         &-arrow {
+            background: none;
             width: 80px;
+            height: 47px;
+
+            @include mixins.tablet {
+                width: 50px;
+                height: 29px;
+            }
+
+            @include mixins.mobile {
+                width: 20px;
+                height: 12px;
+            }
 
             &-previous {
                 transform: rotate(90deg);
+                
+                img {
+                    width: 100%;
+                }
             }
 
             &-next {
                 transform: rotate(-90deg);
+                
+                img {
+                    width: 100%;
+                }
             }
         }
     }

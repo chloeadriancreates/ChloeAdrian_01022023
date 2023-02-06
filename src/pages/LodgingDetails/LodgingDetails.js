@@ -21,25 +21,25 @@ function LodgingDetails() {
                         <h1 className="description-header-title-main">{title}</h1>
                         <p className="description-header-title-location">{location}</p>
                     </div>
-                    <div className="description-header-host">
-                        <p className="description-header-host-name">{host.name}</p>
-                        <img className="description-header-host-picture" src={host.picture} alt={host.name} />
+                    <div className="description-header-taglist">
+                        {tags.map((tag, index) => <Tag key={index} tag={tag} className="description-filters-taglist-tag" />)}
                     </div>
                 </header>
-                <div className="description-filters">
-                    <div className="description-filters-taglist">
-                        {tags.map((tag, index) => <Tag key={index} tag={tag} className="description-filters-taglist-tag" />)}
+                <div className="description-details">
+                    <div className="description-details-host">
+                        <p className="description-details-host-name">{host.name}</p>
+                        <img className="description-details-host-picture" src={host.picture} alt={host.name} />
                     </div>
                     <Rating rating={rating} />
                 </div>
-                <div className="description-details">
-                    <div className="description-details-column">
+            </div>
+            <div className="additional">
+                    <div className="additional-column">
                         <Collapse title="Description" content={description} size="small" />
                     </div>
-                    <div className="description-details-column">
+                    <div className="additional-column">
                         <Collapse title="Équipements" content={equipments} size="small" />
                     </div>
-                </div>
             </div>
             <Footer />
         </div>

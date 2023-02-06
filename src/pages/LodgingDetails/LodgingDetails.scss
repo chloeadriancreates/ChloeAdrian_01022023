@@ -2,57 +2,132 @@
 @use '../../utils/mixins';
 
 .description {
+    @include mixins.flex(row, space-between, stretch);
     margin: 25px 100px;
 
+    @include mixins.tablet {
+        @include mixins.flex(column, center, flex-start);
+        margin: 30px 50px;
+    }
+
+    @include mixins.mobile {
+        margin: 20px;
+    }
+
     &-header {
-        @include mixins.flex(row, space-between, flex-start);
         color: colors.$primary;
 
         &-title {
+            margin-bottom: 20px;
+
             &-main {
                 font-size: 36px;
-                line-height: 50px;
+                line-height: 140%;
                 font-weight: normal;
+
+                @include mixins.laptop {
+                    font-size: 30px;
+                }
+
+                @include mixins.mobile {
+                    font-size: 18px;
+                }
             }
 
             &-location {
                 font-size: 18px;
+                line-height: 140%;
+
+                @include mixins.mobile {
+                    font-size: 14px;
+                }
             }
         }
-
-        &-host {
-            @include mixins.flex(row, flex-end, center);
-            
-            &-name {
-                font-size: 18px;
-                margin-right: 10px;
-                text-align: right;
-            }
-            &-picture {
-                width: 64px;
-                aspect-ratio: 1;
-                border-radius: 50%;
-            }
-        }
-    }
-
-    &-filters {
-        @include mixins.flex(row, space-between, center);
-        margin: 25px 0px;
 
         &-taglist {
             @include mixins.flex(row, flex-start, center);
+            flex-wrap: wrap;
         }
     }
 
     &-details {
-        @include mixins.flex(row, center, flex-start);
+        @include mixins.flex(column, space-between, flex-end);
+        margin-left: 20px;
 
-        &-column {
-            width: 50%;
+        @include mixins.tablet {
+            @include mixins.flex(row-reverse, space-between, center);
+            margin-left: 0px;
+            width: 100%;
+        }
 
-            &:not(:last-child) {
-                margin-right: 76px;
+        &-host {
+            @include mixins.flex(row, flex-end, center);
+            margin-bottom: 25px;
+
+            @include mixins.tablet {
+                margin-bottom: 0px;
+            }
+            
+            &-name {
+                color: colors.$primary;
+                font-size: 18px;
+                line-height: 140%;
+                margin-right: 10px;
+                text-align: right;
+
+                @include mixins.mobile {
+                    font-size: 14px;
+                }
+            }
+
+            &-picture {
+                width: 64px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+
+                @include mixins.mobile {
+                    width: 32px;
+                }
+            }
+        }
+    }
+}
+
+.additional {
+    @include mixins.flex(row, center, flex-start);
+    margin: 15px 100px 25px;
+
+    @include mixins.tablet {
+        @include mixins.flex(column, flex-start, center);
+        margin: 40px 50px 50px;
+    }
+
+    @include mixins.mobile {
+        margin: 20px;
+    }
+
+    &-column {
+        width: 50%;
+
+        @include mixins.tablet {
+            width: 100%;
+        }
+
+        &:not(:last-child) {
+            margin-right: 76px;
+
+            @include mixins.laptop {
+                margin-right: 50px;
+            }
+
+            @include mixins.tablet {
+                margin-right: 0px;
+                margin-bottom: 30px;
+            }
+
+            @include mixins.mobile {
+                margin-right: 0px;
+                margin-bottom: 20px;
             }
         }
     }
