@@ -1,3 +1,4 @@
+@use '../../utils/colors';
 @use '../../utils/mixins';
 
 .lodging {
@@ -8,6 +9,11 @@
     border-radius: 10px;
     margin-bottom: 50px;
     text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover, &:focus {
+        box-shadow: 10px 10px 0px 0px colors.$primary;
+    }
 
     &:nth-child(3n+1) {
         margin-right: 5%;
