@@ -26,11 +26,11 @@ function Carousel(props) {
         <div className="carousel">
             { pictures.length > 1 &&
                 <div className="carousel-arrows">
-                    <button className="carousel-arrows-arrow carousel-arrows-arrow-previous" onClick={previousImage}>
-                        <img src={arrow} alt="Précédent" />
+                    <button className="carousel-arrows-box carousel-arrows-box-previous" onClick={previousImage}>
+                        <img className="carousel-arrows-box-arrow carousel-arrows-box-arrow-previous" src={arrow} alt="Précédent" />
                     </button>
-                    <button className="carousel-arrows-arrow carousel-arrows-arrow-next" onClick={nextImage}>
-                        <img src={arrow} alt="Suivant" />
+                    <button className="carousel-arrows-box carousel-arrows-box-next" onClick={nextImage}>
+                        <img className="carousel-arrows-box-arrow carousel-arrows-box-arrow-next" src={arrow} alt="Suivant" />
                     </button>
                 </div>
             }

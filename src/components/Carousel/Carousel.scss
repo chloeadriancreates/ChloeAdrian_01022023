@@ -27,6 +27,7 @@
         }
 
         @include mixins.mobile {
+            border-radius: 10px;
             height: 255px;
         }
     }
@@ -36,36 +37,79 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        padding: 25px;
 
-        &-arrow {
+        &-box {
             background: none;
-            width: 80px;
-            height: 47px;
-
-            @include mixins.tablet {
-                width: 50px;
-                height: 29px;
-            }
+            height: 100%;
+            padding: 25px;
+            transition: all 0.3s;
 
             @include mixins.mobile {
-                width: 20px;
-                height: 12px;
+                padding: 6px;
             }
 
             &-previous {
-                transform: rotate(90deg);
-                
-                img {
-                    width: 100%;
+                border-radius: 25px 0px 0px 25px;
+
+                @include mixins.mobile {
+                    border-radius: 10px 0px 0px 10px;
+                }
+
+                &:hover {
+                    box-shadow: 70px 0px 60px -60px rgb(0 0 0 / 60%) inset;
+                    cursor: pointer;
+
+                    @include mixins.mobile {
+                        box-shadow: 45px 0px 40px -60px rgb(0 0 0 / 60%) inset;
+                    }
                 }
             }
 
             &-next {
-                transform: rotate(-90deg);
-                
-                img {
-                    width: 100%;
+                border-radius: 0px 25px 25px 0px;
+
+                @include mixins.mobile {
+                    border-radius: 0px 10px 10px 0px;
+                }
+
+                &:hover {
+                    box-shadow: -70px 0px 60px -60px rgb(0 0 0 / 60%) inset;
+                    cursor: pointer;
+
+                    @include mixins.mobile {
+                        box-shadow: -45px 0px 40px -60px rgb(0 0 0 / 60%) inset;
+                    }
+                }
+            }
+
+            &-arrow {
+                width: 80px;
+                height: 47px;
+    
+                @include mixins.tablet {
+                    width: 50px;
+                    height: 29px;
+                }
+    
+                @include mixins.mobile {
+                    width: 20px;
+                    height: 12px;
+                }
+    
+                &-previous {
+                    transform: rotate(90deg);
+                    
+                    img {
+                        width: 100%;
+                    }
+                }
+    
+                &-next {
+                    transform: rotate(-90deg);
+                    
+                    img {
+                        width: 100%;
+                    }
                 }
             }
         }
