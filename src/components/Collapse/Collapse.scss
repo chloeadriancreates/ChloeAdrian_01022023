@@ -1,3 +1,4 @@
+@use "sass:color";
 @use '../../utils/mixins';
 @use '../../utils/colors';
 
@@ -35,27 +36,28 @@
     &-main {
         @include mixins.flex(row, space-between, center);
         background-color: colors.$primary;
+        font-size: inherit;
         padding: 10px 18px;
         border-radius: 5px;
         width: 100%;
+        transition: all 0.3s;
 
         @include mixins.mobile {
-            padding: 6 11px;;
+            padding: 6 11px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: adjust-color($color: colors.$primary, $lightness: 10%);
         }
 
         &-title {
             color: white;
         }
 
-        &-button {
+        &-icon {
             @include mixins.flex();
-            background: none;
-            transition: all 0.4s;
-
-            &:hover {
-                transform: rotate(-90deg);
-                cursor: pointer;
-            }
+            transition: all 0.3s;
 
             &--open {
                 transform: rotate(-180deg);
