@@ -14,7 +14,7 @@ function LodgingDetails() {
     return (
         <div>
             <Header />
-            <Carousel pictures={pictures} />
+            <Carousel pictures={pictures} title={title} />
             <div className="description">
                 <header className="description-header">
                     <div className="description-header-title">

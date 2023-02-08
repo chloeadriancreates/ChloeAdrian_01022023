@@ -3,7 +3,7 @@ import arrow from "../../assets/arrow.svg";
 import { useState } from "react";
 
 function Carousel(props) {
-    const { pictures } = props;
+    const { title, pictures } = props;
     const [index, setIndex] = useState(0);
 
     const previousImage = () => {
@@ -35,7 +35,7 @@ function Carousel(props) {
                 </div>
             }
             <p className="carousel-counter">{index + 1}/{pictures.length}</p>
-            <img className="carousel-image" src={pictures[index]} alt="" />
+            <img className="carousel-image" src={pictures[index]} alt={`${title} ${index + 1}`} />
         </div>
     );
 }

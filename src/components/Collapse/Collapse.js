@@ -22,9 +22,7 @@ function Collapse(props) {
         <div className={`collapse collapse--${size}`}>
             <button className="collapse-main" onClick={toggleCollapse}>
                 <p className="collapse-main-title">{title}</p>
-                {/* <button className={ open ? "collapse-main-button collapse-main-button--open" : "collapse-main-button" } onClick={toggleCollapse}> */}
-                <img className={ open ? "collapse-main-icon collapse-main-icon--open" : "collapse-main-icon" } src={arrow} alt="" />
-                {/* </button> */}
+                <img className={ open ? "collapse-main-icon collapse-main-icon--open" : "collapse-main-icon" } src={arrow} alt={ open ? "Fermer" : "Ouvrir" } />
             </button>
             { open && <div className="collapse-content">
                 { streamlineContent(content).map((item, index) => <p key={index} className="collapse-content-text">{item}</p>) }
