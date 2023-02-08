@@ -1,4 +1,5 @@
 import "./LodgingDetails.scss";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Carousel from "../../components/Carousel/Carousel";
@@ -10,6 +11,10 @@ import Footer from "../../components/Footer/Footer";
 function LodgingDetails() {
     const loc = useLocation();
     const { pictures, title, location, tags, host, rating, description, equipments } = loc.state.data;
+
+    useEffect(() => {
+        document.title = `${title} – Kasa`;
+    }, [title]);
 
     return (
         <div>

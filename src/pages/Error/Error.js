@@ -1,8 +1,13 @@
 import "./Error.scss";
 import Header from "../../components/Header/Header";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Error() {
+    useEffect(() => {
+        document.title = `Erreur – Kasa`;
+    }, []);
+
     return (
         <div className="error">
             <Header />

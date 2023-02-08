@@ -19,6 +19,7 @@ function About() {
 
     useEffect(() => {
         getValues();
+        document.title = `À propos – Kasa`;
     }, []);
 
     return (

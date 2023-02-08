@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     getLodgings();
+    document.title = `Accueil – Kasa`;
   }, []);
 
   return (
