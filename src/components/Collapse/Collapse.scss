@@ -46,7 +46,7 @@
             padding: 6 11px;
         }
 
-        &:hover {
+        &:hover,&:focus {
             cursor: pointer;
             background-color: adjust-color($color: colors.$primary, $lightness: 10%);
         }

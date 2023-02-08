@@ -45,7 +45,7 @@
             &--inactive {
                 text-decoration: none;
 
-                &:hover {
+                &:hover, &:focus {
                     color: white; 
                     background-color: colors.$primary;
                     border-radius: 5px;
