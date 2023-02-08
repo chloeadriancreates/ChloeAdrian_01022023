@@ -13,6 +13,10 @@
 
     &:hover, &:focus {
         box-shadow: 10px 10px 0px 0px colors.$primary;
+
+        @include mixins.tablet {
+            box-shadow: 8px 8px 0px 0px colors.$primary;
+        }
     }
 
     &:nth-child(3n+1) {
