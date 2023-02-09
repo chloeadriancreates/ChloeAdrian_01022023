@@ -7,7 +7,7 @@ import Collapse from "../../components/Collapse/Collapse";
 import { getData } from "../../utils/getData";
 
 function About() {
-    const [values, setValues] = useState([{}]);
+    const [values, setValues] = useState(null);
 
     useEffect(() => {
         getData("./values.json", setValues);
@@ -19,7 +19,9 @@ function About() {
             <Header />
             <Hero />
             <div className="collapseList">
-                { values.map( value => <Collapse key={value.id} title={value.title} content={value.content} size="large" />) }
+                { values &&
+                    values.map( value => <Collapse key={value.id} title={value.title} content={value.content} size="large" />)
+                }
             </div>
             <Footer />
         </div>

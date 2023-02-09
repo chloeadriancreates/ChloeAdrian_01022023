@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { getData } from "../../utils/getData";
 
 function App() {
-  const [lodgings, setLodgings] = useState([{}]);
+  const [lodgings, setLodgings] = useState(null);
 
   useEffect(() => {
     getData("./lodgings.json", setLodgings);
@@ -18,7 +18,9 @@ function App() {
     <div className="app">
       <Header />
       <Hero home={true} />
-      <LodgingList lodgings={lodgings} />
+      { lodgings &&
+        <LodgingList lodgings={lodgings} />
+      }
       <Footer />
     </div>
   );
