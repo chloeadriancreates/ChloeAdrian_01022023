@@ -11,6 +11,7 @@ import Footer from "../../components/Footer/Footer";
 function LodgingDetails() {
     const loc = useLocation();
     const { pictures, title, location, tags, host, rating, description, equipments } = loc.state.data;
+    const [ firstName, lastName ] = host.name.split(/\s(.*)/);
 
     useEffect(() => {
         document.title = `${title} – Kasa`;
@@ -32,7 +33,10 @@ function LodgingDetails() {
                 </header>
                 <div className="description-details">
                     <div className="description-details-host">
-                        <p className="description-details-host-name">{host.name}</p>
+                        <div className="description-details-host-name">
+                            <p>{firstName}</p>
+                            <p>{lastName}</p>
+                        </div>
                         <img className="description-details-host-picture" src={host.picture} alt={host.name} />
                     </div>
                     <Rating rating={rating} />
