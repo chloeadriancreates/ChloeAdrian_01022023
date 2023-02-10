@@ -23,7 +23,7 @@ function About() {
                     values.map( value => <Collapse key={value.id} title={value.title} content={value.content} size="large" />)
                 }
             </div>
-            <Footer className="about-footer" />
+            <Footer />
         </div>
     );
 }

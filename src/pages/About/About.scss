@@ -16,12 +16,4 @@
             margin: 20px;
         }
     }
-
-    &-footer {
-        @include mixins.mobile {
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-        }
-    }
 }
