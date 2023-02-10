@@ -18,12 +18,12 @@ function About() {
         <div className="about">
             <Header />
             <Hero />
-            <div className="collapseList">
+            <div className="about-collapseList">
                 { values &&
                     values.map( value => <Collapse key={value.id} title={value.title} content={value.content} size="large" />)
                 }
             </div>
-            <Footer />
+            <Footer className="about-footer" />
         </div>
     );
 }

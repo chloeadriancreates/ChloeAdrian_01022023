@@ -1,17 +1,27 @@
 @use '../../utils/mixins';
 
-.collapseList {
-    margin: 30px 210px;
+.about {
+    &-collapseList {
+        margin: 30px 210px;
 
-    @include mixins.laptop {
-        margin: 30px 100px;
+        @include mixins.laptop {
+            margin: 30px 100px;
+        }
+
+        @include mixins.tablet {
+            margin: 30px 50px;
+        }
+
+        @include mixins.mobile {
+            margin: 20px;
+        }
     }
 
-    @include mixins.tablet {
-        margin: 30px 50px;
-    }
-
-    @include mixins.mobile {
-        margin: 20px;
+    &-footer {
+        @include mixins.mobile {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
     }
 }
