@@ -1,5 +1,4 @@
 import "./LodgingDetails.scss";
-import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Carousel from "../../components/Carousel/Carousel";
@@ -7,18 +6,17 @@ import Tag from "../../components/Tag/Tag";
 import Rating from "../../components/Rating/Rating";
 import Collapse from "../../components/Collapse/Collapse";
 import Footer from "../../components/Footer/Footer";
+import Error from "../../pages/Error/Error";
 
 function LodgingDetails() {
     const loc = useLocation();
-    const { pictures, title, location, tags, host, rating, description, equipments } = loc.state.data;
-    const [ firstName, lastName ] = host.name.split(/\s(.*)/);
 
-    useEffect(() => {
+    if(loc.state) {
+        const { pictures, title, location, tags, host, rating, description, equipments } = loc.state.data;
+        const [ firstName, lastName ] = host.name.split(/\s(.*)/);
         document.title = `${title} – Kasa`;
-    }, [title]);
 
-    return (
-        <div>
+        return (<div>
             <Header />
             <Carousel pictures={pictures} title={title} />
             <div className="description">
@@ -51,8 +49,10 @@ function LodgingDetails() {
                     </div>
             </div>
             <Footer />
-        </div>
-    );
+        </div>);
+    } else {
+        return <Error />;
+    }
 }
 
 export default LodgingDetails;
